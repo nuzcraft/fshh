@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch3a3ampwptu5"]
+
+[ext_resource type="PackedScene" uid="uid://dnf5ahjprg04e" path="res://models/ilan.gltf" id="1_f3sb7"]
+
+[node name="World" type="Node3D"]
+
+[node name="ilan" parent="." instance=ExtResource("1_f3sb7")]
