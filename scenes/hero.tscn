@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://uk101tcsjwot"]
+
+[ext_resource type="Script" uid="uid://38kl78g22lew" path="res://scenes/hero.gd" id="1_3uyx6"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_yvbpl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hbqj5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbqj5"]
+
+[node name="Hero" type="CharacterBody3D"]
+script = ExtResource("1_3uyx6")
+
+[node name="Head" parent="." instance=ExtResource("2_yvbpl")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_hbqj5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hbqj5")
