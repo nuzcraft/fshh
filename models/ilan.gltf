@@ -97,7 +97,7 @@
 			"count":24283,
 			"max":[
 				2,
-				0.4161708354949951,
+				0.41525599360466003,
 				2
 			],
 			"min":[
@@ -122,14 +122,14 @@
 		{
 			"bufferView":3,
 			"componentType":5126,
-			"count":9674,
+			"count":9672,
 			"max":[
 				0.920677125453949,
-				0.4227498769760132,
+				0.4228258728981018,
 				0.7609254121780396
 			],
 			"min":[
-				-0.7081044316291809,
+				-0.7083511352539062,
 				0.21420298516750336,
 				-0.947794497013092
 			],
@@ -138,7 +138,7 @@
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":9674,
+			"count":9672,
 			"type":"VEC3"
 		},
 		{
@@ -153,12 +153,12 @@
 			"count":664,
 			"max":[
 				0.5627940893173218,
-				0.38198915123939514,
+				0.3819931447505951,
 				-0.03891066089272499
 			],
 			"min":[
 				-0.502946674823761,
-				0.25979962944984436,
+				0.2556079924106598,
 				-0.5607962012290955
 			],
 			"type":"VEC3"
@@ -197,44 +197,44 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":116088,
+			"byteLength":116064,
 			"byteOffset":636840,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":116088,
-			"byteOffset":752928,
+			"byteLength":116064,
+			"byteOffset":752904,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":22356,
-			"byteOffset":869016,
+			"byteOffset":868968,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":7968,
-			"byteOffset":891372,
+			"byteOffset":891324,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":7968,
-			"byteOffset":899340,
+			"byteOffset":899292,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":1620,
-			"byteOffset":907308,
+			"byteOffset":907260,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":908928,
+			"byteLength":908880,
 			"uri":"ilan.bin"
 		}
 	]

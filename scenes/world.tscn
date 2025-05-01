@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch3a3ampwptu5"]
+[gd_scene load_steps=10 format=3 uid="uid://ch3a3ampwptu5"]
 
 [ext_resource type="PackedScene" uid="uid://dnf5ahjprg04e" path="res://models/ilan.gltf" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://uk101tcsjwot" path="res://scenes/hero.tscn" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://bhv5ebxctarbr" path="res://scenes/sea.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://bhv5ebxctarbr" path="res://scenes/c.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cxix83ci540kc" path="res://scenes/pnd.tscn" id="4_71j4m"]
+[ext_resource type="PackedScene" uid="uid://cnu4m3cqnbic0" path="res://scenes/smol_pnd.tscn" id="5_qfnet"]
+[ext_resource type="PackedScene" uid="uid://dr7ur40o3pyds" path="res://scenes/med_pond.tscn" id="6_qfnet"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rwgxs"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -23,13 +26,23 @@ environment = SubResource("Environment_k0juu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
+directional_shadow_mode = 0
+sky_mode = 1
 
 [node name="ilan" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
 [node name="Hero" parent="." instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9016, 44.6969, 16.6122)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2902, 46.5578, 1.98395)
 
-[node name="Sea" parent="." instance=ExtResource("3_4wyf3")]
-transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 18.5, 0)
+[node name="C" parent="." instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+
+[node name="pnd" parent="." instance=ExtResource("4_71j4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0657, 36.4506, -13)
+
+[node name="smol-pnd" parent="." instance=ExtResource("5_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.5862, 31.0355, -12.3066)
+
+[node name="med-pond" parent="." instance=ExtResource("6_qfnet")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 20, 35, 32)
