@@ -1,0 +1,21 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqripokgxko6q"]
+
+[ext_resource type="PackedScene" uid="uid://dnf5ahjprg04e" path="res://models/ilan.gltf" id="1_4uvm7"]
+[ext_resource type="Material" uid="uid://lyxmfbx5tiny" path="res://shaders/material/sand_psx.material" id="2_4uvm7"]
+[ext_resource type="Material" uid="uid://coyllcntr1mal" path="res://shaders/material/grass_psx.material" id="3_dddhm"]
+[ext_resource type="Material" uid="uid://cvk720q8uys5f" path="res://shaders/material/stone_psx.material" id="4_uwdms"]
+[ext_resource type="Material" uid="uid://drrbkwnxvjnr" path="res://shaders/material/mud_psx.material" id="5_mkl21"]
+[ext_resource type="Material" uid="uid://c5oi2dd4cricu" path="res://shaders/material/dirt_psx.material" id="6_qe6vu"]
+[ext_resource type="Material" uid="uid://b0pon3skj13jj" path="res://shaders/material/light_grass_psx.material" id="7_0cprc"]
+[ext_resource type="Material" uid="uid://cn322drpslw7b" path="res://shaders/material/dark_stone_psx.material" id="8_0cprc"]
+
+[node name="ilan" instance=ExtResource("1_4uvm7")]
+
+[node name="ilan" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_4uvm7")
+surface_material_override/1 = ExtResource("3_dddhm")
+surface_material_override/2 = ExtResource("4_uwdms")
+surface_material_override/3 = ExtResource("5_mkl21")
+surface_material_override/4 = ExtResource("6_qe6vu")
+surface_material_override/5 = ExtResource("7_0cprc")
+surface_material_override/6 = ExtResource("8_0cprc")
