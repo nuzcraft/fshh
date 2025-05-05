@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch3a3ampwptu5"]
+[gd_scene load_steps=15 format=3 uid="uid://ch3a3ampwptu5"]
 
 [ext_resource type="PackedScene" uid="uid://dnf5ahjprg04e" path="res://models/ilan.gltf" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://uk101tcsjwot" path="res://scenes/hero.tscn" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://bhv5ebxctarbr" path="res://scenes/c.tscn" id="3_4wyf3"]
-[ext_resource type="PackedScene" uid="uid://cxix83ci540kc" path="res://scenes/pnd.tscn" id="4_71j4m"]
-[ext_resource type="PackedScene" uid="uid://cnu4m3cqnbic0" path="res://scenes/smol_pnd.tscn" id="5_qfnet"]
-[ext_resource type="PackedScene" uid="uid://dr7ur40o3pyds" path="res://scenes/med_pond.tscn" id="6_qfnet"]
+[ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_i7141"]
+[ext_resource type="PackedScene" uid="uid://cqripokgxko6q" path="res://scenes/ilan.tscn" id="4_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="7_4mrxx"]
+[ext_resource type="Material" uid="uid://byjqnen5mrgop" path="res://shaders/material/water_psx.material" id="11_e3hyu"]
+[ext_resource type="Material" uid="uid://6dg6bjmdh1f" path="res://shaders/material/sea_water_psx.material" id="12_q5onr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rwgxs"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -15,11 +15,53 @@ ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 sky_material = SubResource("ProceduralSkyMaterial_rwgxs")
 
 [sub_resource type="Environment" id="Environment_k0juu"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.270588, 0.294118, 0.294118, 1)
 sky = SubResource("Sky_4wyf3")
 tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.270588, 0.294118, 0.294118, 1)
+volumetric_fog_density = 0.15
+volumetric_fog_albedo = Color(0.270588, 0.294118, 0.294118, 1)
+volumetric_fog_emission = Color(0.270588, 0.294118, 0.294118, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_q5onr"]
+material = ExtResource("11_e3hyu")
+size = Vector2(20, 15)
+subdivide_width = 4
+subdivide_depth = 3
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_e3hyu"]
+material = ExtResource("11_e3hyu")
+size = Vector2(32, 32)
+subdivide_width = 6
+subdivide_depth = 6
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_jhx03"]
+material = ExtResource("11_e3hyu")
+size = Vector2(30, 20.01)
+subdivide_width = 6
+subdivide_depth = 4
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_o8fc1"]
+material = ExtResource("11_e3hyu")
+size = Vector2(15, 20)
+subdivide_width = 3
+subdivide_depth = 4
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_xo05s"]
+material = ExtResource("12_q5onr")
+size = Vector2(400, 400)
+subdivide_width = 80
+subdivide_depth = 80
+orientation = 1
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_i7141")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k0juu")
@@ -29,20 +71,41 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 directional_shadow_mode = 0
 sky_mode = 1
 
+[node name="CogitoPlayer" parent="." instance=ExtResource("7_4mrxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2488, 42.8265, 14.7784)
+
 [node name="ilan" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+visible = false
 
-[node name="Hero" parent="." instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2902, 46.5578, 1.98395)
+[node name="ilan2" parent="." instance=ExtResource("4_e3hyu")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
-[node name="C" parent="." instance=ExtResource("3_4wyf3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+[node name="small-pond" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 31, -12)
 
-[node name="pnd" parent="." instance=ExtResource("4_71j4m")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="small-pond"]
+mesh = SubResource("QuadMesh_q5onr")
+
+[node name="pond" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0657, 36.4506, -13)
 
-[node name="smol-pnd" parent="." instance=ExtResource("5_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.5862, 31.0355, -12.3066)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pond"]
+mesh = SubResource("QuadMesh_e3hyu")
 
-[node name="med-pond" parent="." instance=ExtResource("6_qfnet")]
+[node name="medium-pond" type="Node3D" parent="."]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 20, 35, 32)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="medium-pond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+mesh = SubResource("QuadMesh_jhx03")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="medium-pond"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+mesh = SubResource("QuadMesh_o8fc1")
+
+[node name="sea" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sea"]
+mesh = SubResource("QuadMesh_xo05s")
