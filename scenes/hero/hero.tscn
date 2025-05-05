@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjj7uuwyj7ohc"]
+
+[ext_resource type="Script" uid="uid://f068g7qvym4h" path="res://scenes/hero/hero.gd" id="1_3uyx6"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="1_4rdp7"]
+
+[node name="Hero" instance=ExtResource("1_4rdp7")]
+script = ExtResource("1_3uyx6")
+JUMP_VELOCITY = 4.5
+WALKING_SPEED = 5.0
+SPRINTING_SPEED = 8.0
+SLIDE_JUMP_MOD = 1.5
+INVERT_Y_AXIS = false
+HEADBOBBLE = 0
+STEP_MAX_SLOPE_DEGREE = 0.0

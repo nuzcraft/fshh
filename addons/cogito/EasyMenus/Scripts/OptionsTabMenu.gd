@@ -61,7 +61,7 @@ const WINDOW_MODE_ARRAY : Array[String] = [
 ]
 
 const RESOLUTION_DICTIONARY : Dictionary = {
-	"640x480 (4:3)": Vector2(640, 480),
+	#"640x480 (4:3)": Vector2(640, 480),
 	"1152x648 (16:9)" : Vector2(1152, 648),
 	"1280x720 (16:9)" : Vector2i(1280,720),
 	"1280x800 (16:10)" : Vector2i(1280,800),
