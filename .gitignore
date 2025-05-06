@@ -11,6 +11,6 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 .godot/
-data_*/
 
-/addons/fp_controller
+# other stuff
+.vscode/
