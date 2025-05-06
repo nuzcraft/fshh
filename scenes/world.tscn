@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://ch3a3ampwptu5"]
+[gd_scene load_steps=14 format=3 uid="uid://ch3a3ampwptu5"]
 
-[ext_resource type="PackedScene" uid="uid://dnf5ahjprg04e" path="res://models/ilan.gltf" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_i7141"]
 [ext_resource type="PackedScene" uid="uid://cjj7uuwyj7ohc" path="res://scenes/hero/hero.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://cqripokgxko6q" path="res://scenes/ilan.tscn" id="4_e3hyu"]
@@ -75,12 +74,7 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 43.0483, 12.9106)
 floor_max_angle = 0.959931
 
-[node name="ilan" parent="." instance=ExtResource("1_f3sb7")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
-visible = false
-
-[node name="ilan2" parent="." instance=ExtResource("4_e3hyu")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+[node name="ilan" parent="." instance=ExtResource("4_e3hyu")]
 
 [node name="small-pond" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 31, -12)
