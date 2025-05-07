@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://hw55cjch2ibk"]
+
+[ext_resource type="PackedScene" uid="uid://00mxfpdo3ef6" path="res://models/fish/Fish1.glb" id="1_3mk46"]
+[ext_resource type="Material" uid="uid://lyxmfbx5tiny" path="res://shaders/material/sand_psx.material" id="2_7x5i8"]
+[ext_resource type="Material" uid="uid://cc0418lm6tqfk" path="res://shaders/material/red_psx.material" id="3_v1uje"]
+[ext_resource type="Material" uid="uid://bja6njvkvcemc" path="res://shaders/material/orange_psx.material" id="4_v1uje"]
+
+[node name="Fish1" instance=ExtResource("1_3mk46")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0, -0.115153, 0)
+bones/0/rotation = Quaternion(-0.0196999, -0.020525, -0.000386395, 0.999595)
+bones/3/rotation = Quaternion(0.00729162, 0.00704042, 0.0882202, 0.99605)
+bones/4/rotation = Quaternion(-0.0662049, 0.00191853, 0.187732, 0.979985)
+bones/6/rotation = Quaternion(0.989761, 0.141172, 0.00723952, -0.0197981)
+bones/7/rotation = Quaternion(0.990796, -0.133926, -0.00327775, -0.0193769)
+
+[node name="Fish" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_7x5i8")
+surface_material_override/1 = ExtResource("3_v1uje")
+surface_material_override/2 = ExtResource("4_v1uje")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cait7mnrio5bf"]
+
+[ext_resource type="PackedScene" uid="uid://hw55cjch2ibk" path="res://scenes/fish/fish_1.tscn" id="1_qsxdv"]
+[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_uq63c"]
+[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://addons/cogito/Components/Interactions/CarryableComponent.tscn" id="3_6lhr6"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g5n32"]
+points = PackedVector3Array(0.0480095, 0.407296, -2.00803, -0.256044, 0.20459, 0.373765, 0.250844, 0.00199324, 0.322967, -0.0532095, -0.30212, -1.85595, 0.0480095, 0.610111, -0.0824643, -0.103918, -0.30212, 0.931274, -0.0532095, 0.407296, -2.00803, 0.149377, -0.352769, 0.576323, 0.0480095, -0.30212, -1.85595, -0.0532095, -0.505044, 0.12041, -0.256044, 0.0525333, 0.0696123, 0.250844, 0.20459, 0.12041, 0.0987182, 0.0525333, 1.23543, -0.0532095, 0.610111, -0.89301, -0.103918, 0.255239, 0.981754, -0.154577, -0.352769, 0.576323, 0.149377, 0.255239, 0.880476, -0.154577, -0.0994143, 1.08335, -0.0532095, 0.610111, -0.0824643, 0.0480095, 0.610111, -0.89301, 0.149377, -0.0994143, 1.13383, 0.0480095, -0.505044, 0.12041, 0.149377, 0.0525333, -1.04509, -0.103918, 0.0525333, 1.23543, 0.250844, 0.20459, 0.373765, -0.256044, 0.00199324, 0.322967, -0.256044, 0.20459, 0.170891, 0.250844, 0.0525333, 0.0696123, 0.0987182, 0.255239, 0.981754, -0.154577, 0.255239, 0.829678, 0.149377, -0.200713, 0.981754, -0.103918, -0.251471, 1.03255)
+
+[node name="Fish1_Pickup" type="RigidBody3D"]
+mass = 120.0
+script = ExtResource("1_uq63c")
+
+[node name="Fish1" parent="." instance=ExtResource("1_qsxdv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.080111, 0)
+shape = SubResource("ConvexPolygonShape3D_g5n32")
+
+[node name="CarryableComponent" parent="." instance=ExtResource("3_6lhr6")]
+
+[editable path="Fish1"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyr0y7eucw1jx"]
+
+[ext_resource type="PackedScene" uid="uid://cba4elm60onf4" path="res://models/props/Bush_1.gltf" id="1_0xvj6"]
+[ext_resource type="Material" uid="uid://b0pon3skj13jj" path="res://shaders/material/light_grass_psx.material" id="2_0xvj6"]
+[ext_resource type="Script" uid="uid://bbj4jy5hi5if4" path="res://scripts/model-mover.gd" id="2_6kiwl"]
+
+[node name="Bush_12" instance=ExtResource("1_0xvj6")]
+script = ExtResource("2_6kiwl")
+
+[node name="Bush_1" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_0xvj6")

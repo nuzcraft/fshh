@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqripokgxko6q"]
+[gd_scene load_steps=7 format=3 uid="uid://cqripokgxko6q"]
 
 [ext_resource type="PackedScene" uid="uid://dnf5ahjprg04e" path="res://models/ilan.gltf" id="1_4uvm7"]
 [ext_resource type="Script" uid="uid://buw6aea6ethef" path="res://scenes/ilan.gd" id="2_5d6yh"]
 [ext_resource type="PackedScene" uid="uid://cblrvolw3a1ut" path="res://scenes/props/common_tree_12.tscn" id="3_dddhm"]
+[ext_resource type="PackedScene" uid="uid://dyr0y7eucw1jx" path="res://scenes/props/bush_12.tscn" id="4_mkl21"]
+[ext_resource type="PackedScene" uid="uid://edtodwvwgln6" path="res://scenes/props/bush_22.tscn" id="5_vty2l"]
+[ext_resource type="PackedScene" uid="uid://1vfsm7jp142c" path="res://scenes/props/rock_12_pickup.tscn" id="7_qe6vu"]
 
 [node name="ilan" instance=ExtResource("1_4uvm7")]
 script = ExtResource("2_5d6yh")
@@ -11,4 +14,16 @@ script = ExtResource("2_5d6yh")
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
 [node name="CommonTree_12" parent="ilan" index="1" instance=ExtResource("3_dddhm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.415546, 0.421563, 0.0872472)
+transform = Transform3D(1.03518, 0, 0.31553, 0, 1.00763, 0, -0.316485, 0, 1.03205, -0.415546, 0.421563, 0.0872472)
+
+[node name="Bush_12" parent="ilan" index="2" instance=ExtResource("4_mkl21")]
+transform = Transform3D(0.20882, 0, 0.921889, 0, 0.948971, 0, -0.904499, 0, 0.212835, -0.420002, 0.420912, 0.0999353)
+
+[node name="Bush_22" parent="ilan" index="3" instance=ExtResource("5_vty2l")]
+transform = Transform3D(-0.46239, 0, 0.828588, 0, 0.986161, 0, -0.834175, 0, -0.459293, -0.427921, 0.421085, 0.089118)
+
+[node name="Rock_12_Pickup" parent="." index="1" instance=ExtResource("7_qe6vu")]
+transform = Transform3D(0.946006, -0.261619, 0.191384, -0.205889, -0.0289357, 0.978148, -0.250364, -0.964737, -0.0812377, -43.0948, 42.3603, 9.78685)
+
+[node name="Rock_12_Pickup2" parent="." index="2" instance=ExtResource("7_qe6vu")]
+transform = Transform3D(-0.321683, -0.625886, 0.710483, -0.939347, 0.305213, -0.156434, -0.118938, -0.717713, -0.686106, -41.8237, 42.3342, 10.8627)
