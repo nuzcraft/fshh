@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ConsumableItemPD" load_steps=5 format=3 uid="uid://chhkhr03bosey"]
+
+[ext_resource type="Script" uid="uid://dd216g7cnupju" path="res://addons/cogito/InventoryPD/CustomResources/ConsumableEffect.gd" id="1_820ap"]
+[ext_resource type="Script" uid="uid://dr5kneob1wta8" path="res://addons/cogito/InventoryPD/CustomResources/ConsumableItemPD.gd" id="2_hi8r6"]
+[ext_resource type="Texture2D" uid="uid://b2t1bgx8r0rh1" path="res://assets/banana_icon.png" id="2_l6hdc"]
+[ext_resource type="AudioStream" uid="uid://d32mt2lrtuogk" path="res://addons/cogito/Assets/Audio/Kenney/bookOpen.ogg" id="3_hi8r6"]
+
+[resource]
+script = ExtResource("2_hi8r6")
+attribute_name = "health"
+attribute_change_amount = 15.0
+value_to_change = 0
+consumable_effects = Array[ExtResource("1_820ap")]([])
+name = "banana"
+description = "ymmyy nn d'l'shshh"
+icon = ExtResource("2_l6hdc")
+is_stackable = true
+is_droppable = true
+stack_size = 6
+drop_scene = "uid://r3ixovgwye5v"
+hint_text_on_use = "ymmyy"
+item_size = Vector2(1, 1)
+sound_use = ExtResource("3_hi8r6")
+sound_pickup = ExtResource("3_hi8r6")
+metadata/_custom_type_script = "uid://dr5kneob1wta8"

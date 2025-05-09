@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://r3ixovgwye5v"]
+
+[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_vi4eq"]
+[ext_resource type="PackedScene" uid="uid://cms27btc4bcn1" path="res://models/items/banana.glb" id="2_ng65f"]
+[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_81mwu"]
+[ext_resource type="Resource" uid="uid://chhkhr03bosey" path="res://scenes/items/banana_item.tres" id="4_81mwu"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_jdd1k"]
+[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://addons/cogito/Components/Interactions/CarryableComponent.tscn" id="6_wb61f"]
+[ext_resource type="AudioStream" uid="uid://d32mt2lrtuogk" path="res://addons/cogito/Assets/Audio/Kenney/bookOpen.ogg" id="7_k2g53"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jdd1k"]
+points = PackedVector3Array(0.0261601, 0.14493, 0.309815, -0.0373357, 0.0100801, -0.0599053, 0.033053, 0.00431304, -0.0637487, 0.0161642, 0.194927, -0.319898, -0.0337857, 0.18494, 0.319898, -0.0637879, 0.0949747, -0.199905, 0.0661434, 0.0849877, -0.179927, 0.0261601, 0.194927, 0.319898, -0.0237898, 0.194927, -0.319898, -0.0303735, 0.0142765, 0.0721696, -0.0223827, 0.0763884, -0.245254, 0.0661434, 0.0849877, 0.0999526, -0.0625123, 0.0617567, 0.0339414, 0.0320382, 0.016188, 0.0705598, -0.013794, 0.204935, 0.319898, -0.0237898, 0.14493, 0.319898, -0.0737984, 0.0749801, -0.139909, 0.0245168, 0.0766237, -0.242806, -0.0311678, 0.0213584, -0.147973, 0.0261601, 0.18494, -0.319898, -0.0337857, 0.154918, -0.319898, 0.0331276, 0.0132305, -0.127796, 0.0654363, 0.0614156, 0.00853426, 0.0161642, 0.204935, 0.309815, 0.0361559, 0.14493, -0.299858, -0.0337857, 0.174933, -0.319898, 0.023744, 0.0593359, 0.162526, -0.053792, 0.104962, -0.249881, -0.0551157, 0.0783157, 0.103921, 0.0561476, 0.104962, -0.239861, -0.0301052, 0.00605105, 0.017875, 0.0324739, 0.00605105, 0.017875)
+
+[sub_resource type="Resource" id="Resource_wb61f"]
+resource_local_to_scene = true
+script = ExtResource("5_jdd1k")
+inventory_item = ExtResource("4_81mwu")
+quantity = 1
+origin_index = -1
+metadata/_custom_type_script = "uid://di15gqemrkk0x"
+
+[node name="PickupBanana" type="RigidBody3D"]
+collision_layer = 3
+mass = 0.2
+script = ExtResource("1_vi4eq")
+
+[node name="banana2" parent="." instance=ExtResource("2_ng65f")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jdd1k")
+
+[node name="PickupComponent" parent="." instance=ExtResource("3_81mwu")]
+slot_data = SubResource("Resource_wb61f")
+
+[node name="CarryableComponent" parent="." instance=ExtResource("6_wb61f")]
+pick_up_sound = ExtResource("7_k2g53")
+
+[editable path="banana2"]

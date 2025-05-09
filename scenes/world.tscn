@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ch3a3ampwptu5"]
+[gd_scene load_steps=18 format=3 uid="uid://ch3a3ampwptu5"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_i7141"]
 [ext_resource type="PackedScene" uid="uid://cjj7uuwyj7ohc" path="res://scenes/hero/hero.tscn" id="2_qfnet"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://00mxfpdo3ef6" path="res://models/fish/Fish1.glb" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://hw55cjch2ibk" path="res://scenes/fish/fish_1.tscn" id="7_i7141"]
 [ext_resource type="PackedScene" uid="uid://cait7mnrio5bf" path="res://scenes/fish/fish_1_pickup.tscn" id="8_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://r3ixovgwye5v" path="res://scenes/items/pickup_banana.tscn" id="9_7r4gi"]
 [ext_resource type="Material" uid="uid://byjqnen5mrgop" path="res://shaders/material/water_psx.material" id="11_e3hyu"]
 [ext_resource type="Material" uid="uid://6dg6bjmdh1f" path="res://shaders/material/sea_water_psx.material" id="12_q5onr"]
 
@@ -126,5 +127,14 @@ autoplay = "Swim"
 
 [node name="Fish1_Pickup" parent="." instance=ExtResource("8_4mrxx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.3937, 42.4761, 13.2384)
+
+[node name="PickupBanana" parent="." instance=ExtResource("9_7r4gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3014, 42.0155, 9.89385)
+
+[node name="PickupBanana2" parent="." instance=ExtResource("9_7r4gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5148, 42.0007, 8.97014)
+
+[node name="PickupBanana3" parent="." instance=ExtResource("9_7r4gi")]
+transform = Transform3D(0.610975, 0, -0.79165, 0, 1, 0, 0.79165, 0, 0.610975, -45.1122, 41.9802, 7.02136)
 
 [editable path="Fish2"]
