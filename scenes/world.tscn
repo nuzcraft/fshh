@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_i7141"]
 [ext_resource type="PackedScene" uid="uid://cjj7uuwyj7ohc" path="res://scenes/hero/hero.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://cqripokgxko6q" path="res://scenes/ilan.tscn" id="4_e3hyu"]
-[ext_resource type="PackedScene" uid="uid://00mxfpdo3ef6" path="res://models/fish/Fish1.glb" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://hw55cjch2ibk" path="res://scenes/fish/fish_1.tscn" id="7_i7141"]
-[ext_resource type="PackedScene" uid="uid://cait7mnrio5bf" path="res://scenes/fish/fish_1_pickup.tscn" id="8_4mrxx"]
-[ext_resource type="PackedScene" uid="uid://r3ixovgwye5v" path="res://scenes/items/pickup_banana.tscn" id="9_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://cait7mnrio5bf" path="res://scenes/pickups/pickup_fish_1.tscn" id="8_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://r3ixovgwye5v" path="res://scenes/pickups/pickup_banana.tscn" id="9_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://c8ub3tmoshkh1" path="res://scenes/pickups/pickup_pistol.tscn" id="9_w7kh3"]
 [ext_resource type="Material" uid="uid://byjqnen5mrgop" path="res://shaders/material/water_psx.material" id="11_e3hyu"]
 [ext_resource type="Material" uid="uid://6dg6bjmdh1f" path="res://shaders/material/sea_water_psx.material" id="12_q5onr"]
 
@@ -109,14 +109,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="sea"]
 mesh = SubResource("QuadMesh_xo05s")
 
-[node name="Fish1" parent="." instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3223, 42.5854, 14.4194)
-
 [node name="Fish2" parent="." instance=ExtResource("7_i7141")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01356, 33.6462, 29.9373)
 
 [node name="Skeleton3D" parent="Fish2/Armature" index="0"]
-bones/0/rotation = Quaternion(-0.019704, 0, 0, 0.999806)
+bones/0/position = Vector3(0, -0.2, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/3/rotation = Quaternion(0.00739061, -1.50745e-05, -0.00301814, 0.999968)
 bones/4/rotation = Quaternion(-0.0665091, 6.06809e-10, 1.28146e-08, 0.997786)
 bones/6/rotation = Quaternion(0.994931, 0.0984607, 0.00414883, -0.0200299)
@@ -136,5 +134,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.5148, 42.0007, 8.97014)
 
 [node name="PickupBanana3" parent="." instance=ExtResource("9_7r4gi")]
 transform = Transform3D(0.610975, 0, -0.79165, 0, 1, 0, 0.79165, 0, 0.610975, -45.1122, 41.9802, 7.02136)
+
+[node name="PickupPistol" parent="." instance=ExtResource("9_w7kh3")]
+transform = Transform3D(1, 0, 0, 0, 0.430637, 0.902525, 0, -0.902525, 0.430637, -44.4672, 42.5773, 8.39451)
 
 [editable path="Fish2"]

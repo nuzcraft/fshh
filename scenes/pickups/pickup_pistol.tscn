@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8ub3tmoshkh1"]
+
+[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_us0i8"]
+[ext_resource type="PackedScene" uid="uid://b57mo6kksvof" path="res://addons/cogito/Assets/Models/pistol.glb" id="1_vi73o"]
+[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_08jl2"]
+[ext_resource type="Resource" uid="uid://cwns4s1vlh127" path="res://resources/wieldable/pistol.tres" id="4_j4hwx"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_ib2kp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_us0i8"]
+points = PackedVector3Array(-0.802935, -0.91746, -0.182512, 0.76794, 0.619048, 0.0618774, 0.76794, 0.619048, -0.0777504, -0.95264, 0.49736, 0.196263, -0.279092, -0.91746, 0.166639, -0.896021, 0.458932, -0.2, 1.01247, 0.0950468, -0.21746, 1.01247, 0.0950468, 0.201587, -1.01247, 0.0950468, 0.201587, -0.279092, -0.91746, -0.182512, -1.01247, 0.0950468, -0.21746, 0.95264, 0.49736, 0.196263, -0.726405, -0.844236, 0.15, 0.896021, 0.458932, -0.2, 1.11724, 0.164833, -0.112698, 1.11724, 0.164833, 0.131732, -1, 0.350635, -0.0704243, -0.986775, 0.463225, 0.196269, 0.986775, 0.463225, 0.196269, 0.733162, 0.619048, -0.0777504, 0.9281, 0.426809, -0.2, -0.9281, 0.426809, -0.2, 0.733162, 0.619048, 0.0618774, -1, 0.350635, 0.0545513, 1, 0.350635, -0.101705)
+
+[sub_resource type="Resource" id="Resource_eryl7"]
+script = ExtResource("5_ib2kp")
+inventory_item = ExtResource("4_j4hwx")
+quantity = 1
+origin_index = -1
+metadata/_custom_type_script = "uid://di15gqemrkk0x"
+
+[node name="PickupPistol" type="RigidBody3D"]
+script = ExtResource("1_us0i8")
+
+[node name="pistol" parent="." instance=ExtResource("1_vi73o")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.275, 0, 0, 0, 0.275, 0, 0, 0, 0.275, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_us0i8")
+
+[node name="PickupComponent" parent="." instance=ExtResource("3_08jl2")]
+slot_data = SubResource("Resource_eryl7")
+
+[editable path="pistol"]

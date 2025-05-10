@@ -10,4 +10,4 @@ https://github.com/Phazorknight/Cogito
 
 https://quaternius.itch.io/150-lowpoly-nature-models
 
-Kenney - sound effects
+[Kenney - sound effects and models](https://kenney.nl)

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="WieldableItemPD" load_steps=5 format=3 uid="uid://cwns4s1vlh127"]
+
+[ext_resource type="Script" uid="uid://bkxgkf3pj8kb8" path="res://addons/cogito/InventoryPD/CustomResources/WieldableItemPD.gd" id="1_ahdrx"]
+[ext_resource type="Texture2D" uid="uid://b85ie8ppcqv43" path="res://assets/icons/pistol_icon.png" id="1_gbydo"]
+[ext_resource type="AudioStream" uid="uid://ba0rewlha07" path="res://addons/cogito/Assets/Audio/Kenney/SCIMech_Mech Processed Metal 27_RSCPC_SFEW.wav" id="3_26s60"]
+[ext_resource type="PackedScene" uid="uid://dmw4y6ialb6do" path="res://scenes/wieldable/wieldable_blaster.tscn" id="4_gbydo"]
+
+[resource]
+script = ExtResource("1_ahdrx")
+wieldable_scene = ExtResource("4_gbydo")
+no_reload = false
+hint_on_empty = ""
+charge_max = 8.0
+ammo_item_name = "Pistol Ammo"
+charge_current = 8.0
+wieldable_range = 15.0
+wieldable_damage = 3.0
+name = "Pistol"
+description = "with a stylish orange tip"
+icon = ExtResource("1_gbydo")
+is_stackable = false
+is_droppable = true
+stack_size = 0
+drop_scene = "uid://c8ub3tmoshkh1"
+hint_text_on_use = ""
+item_size = Vector2(2, 2)
+sound_pickup = ExtResource("3_26s60")
+metadata/_custom_type_script = "uid://bkxgkf3pj8kb8"

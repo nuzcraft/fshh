@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cblrvolw3a1ut" path="res://scenes/props/common_tree_12.tscn" id="3_dddhm"]
 [ext_resource type="PackedScene" uid="uid://dyr0y7eucw1jx" path="res://scenes/props/bush_12.tscn" id="4_mkl21"]
 [ext_resource type="PackedScene" uid="uid://edtodwvwgln6" path="res://scenes/props/bush_22.tscn" id="5_vty2l"]
-[ext_resource type="PackedScene" uid="uid://1vfsm7jp142c" path="res://scenes/props/rock_12_pickup.tscn" id="7_qe6vu"]
+[ext_resource type="PackedScene" uid="uid://1vfsm7jp142c" path="res://scenes/pickups/pickup_rock_12.tscn" id="7_qe6vu"]
 
 [node name="ilan" instance=ExtResource("1_4uvm7")]
 script = ExtResource("2_5d6yh")

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="ConsumableItemPD" load_steps=5 format=3 uid="uid://chhkhr03bosey"]
+
+[ext_resource type="Script" uid="uid://dd216g7cnupju" path="res://addons/cogito/InventoryPD/CustomResources/ConsumableEffect.gd" id="1_dckak"]
+[ext_resource type="Texture2D" uid="uid://b2t1bgx8r0rh1" path="res://assets/icons/banana_icon.png" id="2_k4ue6"]
+[ext_resource type="Script" uid="uid://dr5kneob1wta8" path="res://addons/cogito/InventoryPD/CustomResources/ConsumableItemPD.gd" id="3_we2ls"]
+[ext_resource type="AudioStream" uid="uid://d32mt2lrtuogk" path="res://addons/cogito/Assets/Audio/Kenney/bookOpen.ogg" id="4_k156i"]
+
+[resource]
+script = ExtResource("3_we2ls")
+attribute_name = "health"
+attribute_change_amount = 15.0
+value_to_change = 0
+consumable_effects = Array[ExtResource("1_dckak")]([])
+name = "banana"
+description = "potent source of potassium"
+icon = ExtResource("2_k4ue6")
+is_stackable = true
+is_droppable = true
+stack_size = 6
+drop_scene = "uid://r3ixovgwye5v"
+hint_text_on_use = "and even ate the peel"
+item_size = Vector2(1, 1)
+sound_use = ExtResource("4_k156i")
+sound_pickup = ExtResource("4_k156i")
+metadata/_custom_type_script = "uid://dr5kneob1wta8"

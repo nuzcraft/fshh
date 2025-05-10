@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cms27btc4bcn1"
-path="res://.godot/imported/banana.glb-71dc2f89e801fc2132c96ac62f4d431f.scn"
+path="res://.godot/imported/banana.glb-9c1721d82f3a79a711912277dba12983.scn"
 
 [deps]
 
-source_file="res://models/items/banana.glb"
-dest_files=["res://.godot/imported/banana.glb-71dc2f89e801fc2132c96ac62f4d431f.scn"]
+source_file="res://models/items/food/banana.glb"
+dest_files=["res://.godot/imported/banana.glb-9c1721d82f3a79a711912277dba12983.scn"]
 
 [params]
 
